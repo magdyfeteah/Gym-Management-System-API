@@ -1,0 +1,125 @@
+@baseUrl = https://localhost:7063
+@another = fc7fce0c-19e1-4202-9e56-2f8d22ce417e
+@memberId = ce05eba2-83b1-420c-b9cd-742fc5eaf245
+@anothermember =485bbe9d-54e0-421c-abf8-e8aba3de18c1
+@AdminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQGd5bS5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiU2F5ZWQgQWhtZWQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3Mjc5MDY4MSwiaXNzIjoiR3ltQXBpIiwiYXVkIjoiR3ltQXBpVXNlcnMifQ.b44ZsjChdWz_W0mTDc6NdD8tgHhNGfQmrHM45VuAWGI
+@memberToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImZjN2ZjZTBjLTE5ZTEtNDIwMi05ZTU2LTJmOGQyMmNlNDE3ZSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFsaS5oYXNzYW5AZ3ltLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJhbGkgdGVzdCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik1lbWJlciIsImV4cCI6MTc3Mjc5MTkzMSwiaXNzIjoiR3ltQXBpIiwiYXVkIjoiR3ltQXBpVXNlcnMifQ.0qtHx2VVpwvJVLhGKQr-022HctvB9Ulod1sXWE_1kzs
+@coachToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjExMTExMTExLTExMTEtMTExMS0xMTExLTExMTExMTExMTExMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFobWVkLmFsaUBneW0uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6IkFobWVkIEFsaSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNvYWNoIiwiZXhwIjoxNzcyNzkwNzkyLCJpc3MiOiJHeW1BcGkiLCJhdWQiOiJHeW1BcGlVc2VycyJ9.c_grArOT11vbql4PhBuAqWryFfGhHVUWZBp5M770Dv4
+###
+GET {{baseUrl}}/api/members
+Authorization: bearer {{AdminToken}}
+###
+GET {{baseUrl}}/api/members/{{anothermember}}
+Authorization: Bearer {{AdminToken}}
+###
+GET {{baseUrl}}/api/members/{{anothermember}}
+Authorization: Bearer {{memberToken}}
+###
+###
+GET {{baseUrl}}/api/members/me
+Authorization: Bearer {{memberToken}}
+###
+GET {{baseUrl}}/api/members/{{anothermember}}
+Authorization: Bearer {{coachToken}}
+###
+###
+POST {{baseUrl}}/api/members
+Content-Type: application/json
+Authorization: Bearer {{AdminToken}}
+
+{
+  "FullName": "Ali Hassan",
+  "Email": "ali.hassan@gym.com",
+  "Password": "12345678Mf!",
+  "Phone": "01012345678",
+  "Age": 28,
+  "Gender": "Male",
+  "Weight": 75,
+  "Height": 180,
+  "IsPrivate": true,
+  "Subscription": {
+    "Plans": "onesession",
+    "Status": "Active"
+  }
+}
+###
+POST {{baseUrl}}/api/members
+Content-Type: application/json
+Authorization: Bearer {{AdminToken}}
+
+{
+  "FullName": "ali test",
+  "Email": "ali.hassan@gym.com",
+  "Password": "12345678Mf#",
+  "Phone": "01012345678",
+  "Age": 28,
+  "Gender": "Male",
+  "Weight": 75,
+  "Height": 180,
+  "IsPrivate": false,
+  "Subscription": {
+    "Plans": "onesession"
+  }
+}
+
+###
+PATCH {{baseUrl}}/api/members/{{memberId}}
+Content-Type: application/json
+
+{
+  
+  "Email": "dafsff@mailcom",
+  "Password": "12345678Mf@",
+  "subscription" :{
+    "plans" : "onesession"
+  }
+}
+###
+DELETE {{baseUrl}}/api/members/{{memberId}}
+Authorization: Bearer {{AdminToken}}
+###
+GET {{baseUrl}}/api/members/checkIn/{{memberId}}
+Authorization: Bearer {{AdminToken}}
+
+###
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "Email" : "admin@gym.com" ,
+  "Password" : "Admin123@"
+}
+###
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "Email" : "ali.hassan@gym.com" ,
+  "Password" : "12345678Mf#"
+}
+
+###
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "Email" : "ahmed.ali@gym.com" ,
+  "Password" : "11111111Aa@"
+}
+###
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "Email" : "ali.hassan@gym.com" ,
+  "Password" : "11111111Aa@"
+}
+###
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "Email" : "ali.hassan@gym.com" ,
+  "Password" : "12345678Mf#"
+}
+
