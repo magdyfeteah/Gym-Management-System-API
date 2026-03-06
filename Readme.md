@@ -83,15 +83,15 @@ Bearer YOUR_TOKEN
 
 ## Members
 
-| Method | Endpoint                        | Description                | Access                |
-| ------ | ------------------------------- | -------------------------- | --------------------- |
-| GET    | /api/Members                    | Get all members            | Admin                 |
-| GET    | /api/Members/{memberId}         | Get member by ID           | Admin / Coach / Owner |
-| GET    | /api/Members/me                 | Get current member profile | Member                |
-| POST   | /api/Members                    | Create new member          | Admin                 |
-| PATCH  | /api/Members/{memberId}         | Update member              | Admin / Owner         |
-| DELETE | /api/Members/{memberId}         | Delete member              | Admin / Owner         |
-| GET    | /api/Members/checkIn/{memberId} | Member check-in            | Admin                 |
+| Method | Endpoint                        | Description                | Access                         |
+| ------ | ------------------------------- | -------------------------- | ---------------------          |
+| GET    | /api/Members                    | Get all members            | Admin                          |
+| GET    | /api/Members/{memberId}         | Get member by ID           | Admin / Coach / Owner          |
+| GET    | /api/Members/me                 | Get current member profile | Member                         |
+| POST   | /api/Members                    | Create new member          | Admin                          |
+| PATCH  | /api/Members/{memberId}         | Update member              | Admin / Member himself         |
+| DELETE | /api/Members/{memberId}         | Delete member              | Admin / Member himself         |
+| GET    | /api/Members/checkIn/{memberId} | Member check-in            | Admin                          |
 
 ---
 
