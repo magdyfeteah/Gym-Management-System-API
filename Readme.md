@@ -86,7 +86,7 @@ Bearer YOUR_TOKEN
 | Method | Endpoint                        | Description                | Access                         |
 | ------ | ------------------------------- | -------------------------- | ---------------------          |
 | GET    | /api/Members                    | Get all members            | Admin                          |
-| GET    | /api/Members/{memberId}         | Get member by ID           | Admin / Coach / Owner          |
+| GET    | /api/Members/{memberId}         | Get member by ID           | Admin / Coach / Member himself |
 | GET    | /api/Members/me                 | Get current member profile | Member                         |
 | POST   | /api/Members                    | Create new member          | Admin                          |
 | PATCH  | /api/Members/{memberId}         | Update member              | Admin / Member himself         |
